@@ -11,13 +11,11 @@ describe "Static Pages" do
                                 :text => 'Sample App')
     end
 
-    it "should have the right title" do
-
+    it "should not have a custom page title" do
       visit "/static_pages/home"
-      page.should have_selector('title',
-                                :text => 'Ruby On Rails Tutorial Sample App | Home')
+      page.should_not have_selector('title',
+                                    :text => '| Home')
     end
-
   end
 
   describe "Help page" do
